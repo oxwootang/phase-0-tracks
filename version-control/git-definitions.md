@@ -4,7 +4,7 @@
 
 * What is version control?  Why is it useful?
 
-Version control is a system that records changes made to files/set of files over time so that it is easier to recall previous versions. It is useful because it saves previous work that can be referred back to if need be.
+Version control is a Git system that records changes made to files/set of files over time so that it is easier to recall previous versions. It is useful because it saves previous work that can be referred back to if need be.
 
 * What is a branch and why would you use one?
 
