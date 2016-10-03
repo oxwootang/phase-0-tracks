@@ -12,3 +12,7 @@ padding: 15px;
 .accomplishments {
   font-size: .8em;
 }
+
+section h3:hover {
+  color: #00FF00;
+}
