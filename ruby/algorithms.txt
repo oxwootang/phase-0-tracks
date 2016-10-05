@@ -1,0 +1,19 @@
+Release 0: Equip your new robot
+
+- Press the button for up or down.
+- Wait for the elevator doors to open:
+	- Wait for people to exit the elevator.
+	- Check if the elevator is going in your direction (up/down):
+		- If yes, then enter the elevator.
+		- If no, wait for the next elevator doors to open and repeat the same 		process.
+- Once in the elevator, search the buttons from the current floor number, and go in the up/down direction as wanted until the right floor button is found.
+- Press the button, and wait for the elevator to reach the destination.
+
+Release 1: Find a real-life algorithm
+
+The algorithm to playing a game on the Playstation 4:
+- Press the top button on the front-face of the PS4 to turn it on.
+- Press the center PS button on the controller to turn it on.
+- Check that the correct game disc is in the PS4:
+	- If it is, then select the game in the PS4 home menu to start the game. 		Enjoy!
+	- If it is not, then press the bottom button on the front-face of the PS4 to 	remove the current game disc and switch it with the correct one and return to 	the previous checkpoint for directions.
