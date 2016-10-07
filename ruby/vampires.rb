@@ -1,3 +1,6 @@
+puts "How many employees will be processed?"
+employees = gets.chomp.to_i
+while employees > 0
 puts "What is your name?"
 name = gets.chomp
 puts "How old are you?"
@@ -31,4 +34,6 @@ when "Definitely"
   print "Definitely a vampire."
 when nil
   print "Results inconclusive."
+end
+employees -= 1
 end
