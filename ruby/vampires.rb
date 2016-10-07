@@ -14,10 +14,13 @@ insurance = gets.chomp
 interview = nil
 if age && (garlic || insurance)
   interview = "Not"
+end
 if !age && (!garlic || !insurance)
   interview = "Probably"
+end
 if !age && !garlic && !insurance
   interview = "Certain"
+end
 if name == "Drake Cula" || name == "Tu Fang"
   interview = "Definitely"
 else
@@ -34,6 +37,15 @@ when "Definitely"
   print "Definitely a vampire."
 when nil
   print "Results inconclusive."
+end
+puts "Please list any allergies, one at a time."
+allergies = gets.chomp
+while allergies != "sunshine" || sunshine != "done"
+  puts "Please list any allergies, one at a time."
+  allergies = gets.chomp
+end
+if allergies == "sunshine"
+  interview = "Probably"
 end
 employees -= 1
 end
