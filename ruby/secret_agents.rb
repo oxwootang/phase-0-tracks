@@ -62,3 +62,25 @@ decrypt("bcd")
 decrypt("afe")
 decrypt(encrypt("swordfish"))
 # This nested method call works because both of the called methods are available globally.
+
+
+# Define a method that asks for user input.
+# The user input will determine if the user needs to encrypt or decrypt.
+# Next the user will need to input the string.
+# The encrypting or decrypting should be done in case statments.
+# Print the result to the screen.
+
+def agent_interface()
+  p "Hello Agent. Do you need to encrypt (E) or decrypt (D)?"
+  method_input = gets.chomp
+  p "Please enter the password."
+  password = gets.chomp
+  case method_input
+    when method_input.downcase == "encrypt" || method_input.downcase == "e"
+      p encrypt(password)
+    when method_input.downcase == "decrypt" || method_input.downcase == "d"
+      p decrypt(password)
+    else
+      p "What do you want to do?"
+    end
+end
