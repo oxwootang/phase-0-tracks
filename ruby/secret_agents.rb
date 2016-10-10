@@ -60,3 +60,5 @@ encrypt("abc")
 encrypt("zed")
 decrypt("bcd")
 decrypt("afe")
+p decrypt(encrypt("swordfish"))
+# This nested method call works because both of the called methods are available globally.
