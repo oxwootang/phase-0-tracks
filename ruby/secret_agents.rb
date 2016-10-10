@@ -25,7 +25,7 @@ def encrypt(input_str)
     #p "Count should have gone up by 1: #{count}"
   end
   #p "I am now out of the loop"
-  p to_encrypt
+  #p to_encrypt
   return to_encrypt
 end
 
@@ -51,7 +51,7 @@ def decrypt(str_input)
     end
     count += 1
   end
-  p to_return
+  #p to_return
   return to_return
 end
 
@@ -60,5 +60,5 @@ encrypt("abc")
 encrypt("zed")
 decrypt("bcd")
 decrypt("afe")
-p decrypt(encrypt("swordfish"))
+decrypt(encrypt("swordfish"))
 # This nested method call works because both of the called methods are available globally.
