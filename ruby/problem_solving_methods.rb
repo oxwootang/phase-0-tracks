@@ -41,6 +41,9 @@ def bubble_sort(int_array)
         count += 1
       end
     end
+  end
+  return to_return
+end
 
 def fib(terms)
   start = 2
