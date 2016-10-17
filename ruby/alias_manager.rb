@@ -61,7 +61,7 @@ end
 
 # define a function that takes a string as an argument and returns the next vowel
 def vowel(letter, vowels="aeiou".split(''))
-  vowel_index = vowels.index(letter)
+  vowel_index = vowels.index(letter.downcase)
   # getting the index of the vowel of the word in the vowels array
   if vowel_index == 4
     return vowels[0]
@@ -71,4 +71,25 @@ def vowel(letter, vowels="aeiou".split(''))
   end
 end
 
-p fake_name("Felicia Torres")
+# asking for user input for a name
+def get_name()
+  alias_name_arr = []
+  puts "What name do you want to make an alias for?"
+  input = gets.chomp
+  index = 0
+  while input != "quit"
+    real = input
+    fake = fake_name(input)
+    alias_name_arr.push(fake)
+    alias_name_arr[index][:real] = input
+    puts "What name do you want to make an alias for?"
+    input = gets.chomp
+    index += 1
+  end
+
+  for name_hash in alias_name_arr do
+    p "The real name of #{name_hash[:first]} #{name_hash[:last]} is #{name_hash[:real]}"
+  end
+end
+
+get_name
