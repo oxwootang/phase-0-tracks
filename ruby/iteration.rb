@@ -73,7 +73,7 @@ end
 hash_delete
 
 
-def diff_filter
+def hash_filter
   fruits = {
     "apple" => "green",
     "orange" => "orange",
@@ -81,11 +81,23 @@ def diff_filter
     "banana" => "yellow"
   }
 
-  new_fruits= {}
-  fruits.each{|x, y| if x==y then new_fruits[x]=y end}
-  puts new_fruits
+  fruits.keep_if {
+    |fruit, color| fruit == color
+  }
+
+  return fruits
 end
-diff_filter
+p hash_filter
+
+def array_filter
+  fruits = ["apple", "orange", "banana"]
+  grocery_list = ["toilet paper", "water", "orange"]
+  grocery_list.keep_if {
+    |item| fruits.include? item
+  }
+  return grocery_list
+end
+p array_filter
 
 
 
