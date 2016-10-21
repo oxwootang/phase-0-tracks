@@ -1,5 +1,8 @@
 class Santa
 
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
+
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance"
     @gender = gender
@@ -25,17 +28,17 @@ class Santa
     @reindeer_ranking.push(reinder)
   end
 
-  def gender=(new_gender)
-    @gender = new_gender
-  end
+  # def gender=(new_gender)
+  #   @gender = new_gender
+  # end
 
-  def age
-    @age
-  end
+  # def age
+  #   @age
+  # end
 
-  def ethnicity
-    @ethnicity
-  end
+  # def ethnicity
+  #   @ethnicity
+  # end
 
 end
 
@@ -54,6 +57,7 @@ jolly.eat_milk_and_cookies("oatmeal raisin")
 santas[-2].speak
 santas[-2].eat_milk_and_cookies("gingersnap")
 puts santas[1].age
+puts santas[1].ethnicity
 puts santas[1].celebrate_birthday
 puts santas[1].celebrate_birthday
 p santas[3]
