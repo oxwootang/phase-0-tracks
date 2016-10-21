@@ -55,7 +55,6 @@ end
 # input: hash
 # steps: puts hash with #each using |key, value| for block parameter
 # output: print string of hash
-
 def print_list(our_list)
   our_list.each do |key, value|
     puts "#{key} : #{value}"
@@ -69,3 +68,11 @@ add_item(our_list, "ice cream", 4)
 remove_item(our_list, "lemonade")
 update(our_list, "ice cream", 1)
 print_list(our_list)
+
+# REFLECTION
+# I learned from this challenge that pseudocode helps organize my thought processes on how to approach code. I have to think about what the steps are, what is needed to accomplish the steps, and then the means to put everything together. Pseudocode is basically my way of talking myself through the problem.
+# The tradeoffs of using an array vs. a hash came in the #grocery_list method. When defining the method, I first thought of just parsing through the string input and using #split to get an array of grocery items. I thought that would be enough for the method to do, and the other methods would work around the fact that #grocery_list returns an array while the other methods worked on hashes. So I would have had to include code to change the arrays to hashes in each method. My partner Rina pointed out that would be difficult and needless, if we just worked with a hash from the beginning. It all depends on what the input and output are and what can be done with arrays vs. hashes.
+# A method implicitly returns the last evaluated expression, otherwise whatever is returned with the return statement.
+# You can pass in many things as arguments to methods: strings, ints, booleans, arrays, hashes, classes, etc. Probably even other methods.
+# You can pass information between methods by using a common data structure or variable to work on. In this GPS challege, we used an empty hash that was defined outside the methods.
+# Concepts that were solidified in this challenge were my understanding of how methods interact with one another and data structure manipulation.
