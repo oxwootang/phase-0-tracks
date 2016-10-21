@@ -1,7 +1,7 @@
 class Santa
 
-  attr_reader :age, :ethnicity
-  attr_accessor :gender
+  attr_reader :ethnicity
+  attr_accessor :gender, :age
 
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance"
@@ -45,21 +45,25 @@ end
 santas = []
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-example_genders.length.times do |i|
-  santas << Santa.new(example_genders[i], example_ethnicities[i])
+100.times do
+  new_santa = Santa.new(example_genders.sample, example_ethnicities.sample)
+  new_santa.age = rand(0..140)
+  p new_santa.age
+  p new_santa.ethnicity
+  p new_santa.gender
 end
 
-santas << Santa.new("male", "Asian")
-jolly = Santa.new("N/A", "N/A")
-santas << jolly
-jolly.speak
-jolly.eat_milk_and_cookies("oatmeal raisin")
-santas[-2].speak
-santas[-2].eat_milk_and_cookies("gingersnap")
-puts santas[1].age
-puts santas[1].ethnicity
-puts santas[1].celebrate_birthday
-puts santas[1].celebrate_birthday
-p santas[3]
-puts santas[3].gender = "female"
-p santas[3]
+# santas << Santa.new("male", "Asian")
+# jolly = Santa.new("N/A", "N/A")
+# santas << jolly
+# jolly.speak
+# jolly.eat_milk_and_cookies("oatmeal raisin")
+# santas[-2].speak
+# santas[-2].eat_milk_and_cookies("gingersnap")
+# puts santas[1].age
+# puts santas[1].ethnicity
+# puts santas[1].celebrate_birthday
+# puts santas[1].celebrate_birthday
+# p santas[3]
+# puts santas[3].gender = "female"
+# p santas[3]
