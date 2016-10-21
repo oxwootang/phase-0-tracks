@@ -16,6 +16,27 @@ class Santa
     puts "That was a good #{cookie_type}!"
   end
 
+  def celebrate_birthday()
+    @age += 1
+  end
+
+  def get_mad_at(reindeer)
+    @reindeer_ranking.delete(reindeer)
+    @reindeer_ranking.push(reinder)
+  end
+
+  def gender=(new_gender)
+    @gender = new_gender
+  end
+
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
+  end
+
 end
 
 santas = []
@@ -32,3 +53,9 @@ jolly.speak
 jolly.eat_milk_and_cookies("oatmeal raisin")
 santas[-2].speak
 santas[-2].eat_milk_and_cookies("gingersnap")
+puts santas[1].age
+puts santas[1].celebrate_birthday
+puts santas[1].celebrate_birthday
+p santas[3]
+puts santas[3].gender = "female"
+p santas[3]
