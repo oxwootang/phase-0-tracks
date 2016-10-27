@@ -35,7 +35,29 @@ function objectMatch(obj1, obj2) {
   return false;
 }
 
+// write a function that takes an integer for length, and builds and returns an array of strings of the given length
+// initialize an empty array as the array to return
+// initialize an array of the alphabet-used to create a random word of random
+// loop for the length of the array wanted, and loop inside to create a word of random length 1-10
+// remember to push the new word into the array to return
+
+function randomArray(length) {
+  var toReturn = [];
+  var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+  for (var i=0; i<length; i++) {
+    wordLength = Math.floor(Math.random()*10+1);
+    word = [];
+    for (var k=0; k<wordLength; k++) {
+      word.push(alphabet[Math.floor(Math.random()*alphabet.length)]);
+    }
+    toReturn.push(word.join(''));
+  }
+  return toReturn;
+}
+
 // driver code
 console.log(longest(['a', 'ab', 'abc', 'd', 'efgh']));
 console.log(longest(['apple', 'car', 'abracadabra']));
 console.log(objectMatch({'name': 'Steve', fruit: 'orange', done: true}, {name: 'Steven', fruit: 'carrot', 'done': false}));
+console.log(randomArray(4));
+console.log(randomArray(2));
