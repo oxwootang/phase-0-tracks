@@ -17,5 +17,25 @@ function longest(array) {
   return longest
 }
 
+// write a function that takes two objects and checks to see if the objects share at least one key-value pair
+// if at least one key-value pair matches, return true; else return false
+// the function should take two objects as arguments
+
+function objectMatch(obj1, obj2) {
+  for (property1 in obj1) {
+    for (property2 in obj2) {
+      if (obj1[property1] == obj2[property2]) {
+        return true;
+      }
+      else {
+        continue;
+      }
+    }
+  }
+  return false;
+}
+
+// driver code
 console.log(longest(['a', 'ab', 'abc', 'd', 'efgh']));
 console.log(longest(['apple', 'car', 'abracadabra']));
+console.log(objectMatch({'name': 'Steve', fruit: 'orange', done: true}, {name: 'Steven', fruit: 'carrot', 'done': false}));
