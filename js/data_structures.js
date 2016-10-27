@@ -35,3 +35,6 @@ myCar.washCar = function() {
   }
 };
 myCar.washCar();
+
+var yourCar = new Car("Saab", 15, true);
+console.log(yourCar);
