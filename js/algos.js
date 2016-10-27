@@ -43,7 +43,6 @@ function objectMatch(obj1, obj2) {
 // loop for the length of the array wanted, and loop inside to create a word of random length 1-10
 // remember to push the new word into the array to return
 
->>>>>>> master
 function randomArray(length) {
   var toReturn = [];
   var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
@@ -62,11 +61,7 @@ function randomArray(length) {
 console.log(longest(['a', 'ab', 'abc', 'd', 'efgh']));
 console.log(longest(['apple', 'car', 'abracadabra']));
 console.log(objectMatch({'name': 'Steve', fruit: 'orange', done: true}, {name: 'Steven', fruit: 'carrot', 'done': false}));
-<<<<<<< HEAD
 for (var i=0; i<10; i++) {
   console.log(randomArray(Math.floor(Math.random()*10+1)));
 }
-=======
-console.log(randomArray(4));
-console.log(randomArray(2));
->>>>>>> master
+
