@@ -1,7 +1,7 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself].
-# I spent [#] hours on this challenge.
+# I worked on this challenge by myself.
+# I spent 2 hours on this challenge.
 
 # EXPLANATION OF require_relative
 # require_relative is a version of the built-in method require. The normal require method can be used to access data/files just like require_relative, but require_relative is a better solution to most file accessing needs because it can load files not in the same directory.
