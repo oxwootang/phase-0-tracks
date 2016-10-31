@@ -1,21 +1,23 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself].
+# I spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# require_relative is a version of the built-in method require. The normal require method can be used to access data/files just like require_relative, but require_relative is a better solution to most file accessing needs because it can load files not in the same directory.
+
 require_relative 'state_data'
 
 class VirusPredictor
 
+  # this is the initialize method of the VirusPredictor class and it initializes each new instance of VirusPredictor with the state_of_origin, population_density, and population instance attributes.
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+  # this virus_effects instance method peforms two method calls, predicted_deaths and speed of spread.
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
@@ -23,6 +25,7 @@ class VirusPredictor
 
   private
 
+  # this predicted_deaths instance method takes in population_density, population, and state instance attributes to calculate the estimated number_of_deaths.
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -41,6 +44,7 @@ class VirusPredictor
 
   end
 
+  # this speed_of_spread instance method calculates the time (in months) to totally spread the virus in the state given that state's population_density.
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
