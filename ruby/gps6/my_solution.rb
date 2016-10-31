@@ -82,3 +82,8 @@ report_all
 
 #=======================================================================
 # Reflection Section
+# The difference in syntax between the two hash styles is one uses a string as the key, and uses a hash rocket to assign the value to the string keys, while the inner hash uses symbols and loses the hash rocket when assigning values.
+# require_relative is a version of the built-in method require. The normal require method can be used to access data/files just like require_relative, but require_relative is a better solution to most file accessing needs because it can load files not in the same directory.
+# Some ways to iterate through a hash is to use .each |key, value| and using those block parameters to iterate. Another way to iterate through a hash is to iterate through just the keys wish hash#keys.
+# refactoring virus_effects, the parameters given to predicted_deaths and speed_of_spread were similar with the exception that speed_of_spread didn't require the population. But that wasn't what needed refactoring. In defining the methods predicted_deaths and speed_of_spread, the initial code had the instance variables mentioned with @ in front, but in the method calls in virus_effects, the @ is already in front. I thought that it was repetitive to give the same self-parameters like that so I had the method definitions changed from @ to just regular parameter arguments.
+# The concept I most solidified is my understanding of Ruby method calls, data structures, and class construction.
