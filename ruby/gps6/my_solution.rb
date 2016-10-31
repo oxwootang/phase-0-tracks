@@ -70,9 +70,16 @@ end
 
 #=======================================================================
 
+# implemented a new feature/method that creates a report for all 50 states.
+def report_all
+  STATE_DATA.each do |state, state_values|
+    new_state = VirusPredictor.new(state, state_values[:population_density], state_values[:population])
+    new_state.virus_effects
+  end
+end
+
 # DRIVER CODE
  # initialize VirusPredictor for each state
-
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
@@ -86,6 +93,7 @@ california.virus_effects
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
 
+report_all
 
 #=======================================================================
 # Reflection Section
