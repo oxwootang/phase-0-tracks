@@ -30,3 +30,31 @@ Dick Cheney|republican
 
 5. Delete an item that meets some condition.
 sqlite> DELETE FROM politicians WHERE name="Donald Trump";
+
+INNER-JOIN (Same as JOIN)
+sqlite> SELECT parties.name, politicians.name, politicians.state FROM parties INNER JOIN politicians ON parties.id=politicians.party_id;
+democrat|Barack Obama|HI
+democrat|Bill Clinton|AR
+republican|George W. Bush|TX
+democrat|Hillary Clinton|NY
+republican|Dick Cheney|NE
+
+INNER-JOIN (Flipped from above)
+sqlite> select politicians.name, parties.name, politicians.state FROM politicians INNER JOIN parties on politicians.party_id=parties.id;
+Barack Obama|democrat|HI
+Bill Clinton|democrat|AR
+George W. Bush|republican|TX
+Hillary Clinton|democrat|NY
+Dick Cheney|republican|NE
+
+LEFT-JOIN
+sqlite> SELECT politicians.name, politicians.age, politicians.state FROM politicians LEFT JOIN parties on politicians.party_id=parties.id;
+Barack Obama|55|HI
+Bill Clinton|70|AR
+George W. Bush|70|TX
+Hillary Clinton|69|NY
+Dick Cheney|75|NE
+
+OUTER-JOIN (Got an error)
+sqlite> SELECT polticians.name, politicians.age, politicians.state FROM politicians FULL OUTER JOIN parties on politicians.party_id=parties.id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
