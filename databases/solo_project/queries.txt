@@ -1,0 +1,32 @@
+1. Display the information in one table.
+sqlite> SELECT * FROM politicians;
+1|Barack Obama|55|HI|1
+2|Bill Clinton|70|AR|1
+3|George W. Bush|70|TX|2
+4|Hillary Clinton|69|NY|1
+5|Donald Trump|70|n/a|2
+6|Dick Cheney|75|NE|2
+
+2. Update an item that meets some condition.
+sqlite> UPDATE politicians SET state="N/A" WHERE state="n/a";
+
+3. Display the information in both tables using one query.
+sqlite> SELECT * FROM politicians, parties WHERE politicians.party_id=parties.id;
+1|Barack Obama|55|HI|1|1|democrat
+2|Bill Clinton|70|AR|1|1|democrat
+3|George W. Bush|70|TX|2|2|republican
+4|Hillary Clinton|69|NY|1|1|democrat
+5|Donald Trump|70|N/A|2|2|republican
+6|Dick Cheney|75|NE|2|2|republican
+
+4. Display a narrower selection of columns from both tables using one query.
+sqlite> SELECT politicians.name, parties.name FROM politicians JOIN parties ON politicians.party_id=parties.id;
+Barack Obama|democrat
+Bill Clinton|democrat
+George W. Bush|republican
+Hillary Clinton|democrat
+Donald Trump|republican
+Dick Cheney|republican
+
+5. Delete an item that meets some condition.
+sqlite> DELETE FROM politicians WHERE name="Donald Trump";
