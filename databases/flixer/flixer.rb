@@ -34,8 +34,8 @@ db.execute(create_watchlist_table_cmd)
 db.execute(create_tv_series_table_cmd)
 
 # insert new series into TV-series TABLE
-def insert_series(db, title, rating, status="NEW", watchlist=false)
-  db.execute("INSERT INTO tv_series (title, rating, status, watchlist) VALUES (?, ?, ?, ?)", [title, rating, status, watchlist])
+def insert_series(db, title, rating, watchlist=false)
+  db.execute("INSERT INTO tv_series (title, rating, watchlist) VALUES (?, ?, ?)", [title, rating, watchlist])
 end
 
 # insert new series to watchlist TABLE
@@ -44,9 +44,16 @@ def insert_watchlist(db, ep_title, status="NEW", series_id)
   db.execute("UPDATE tv_series SET watchlist=true WHERE id=?", [series_id])
 end
 
+def update_series(db, title, rating)
+  db.execute("UPDATE tv_series SET rating=? WHERE title=?", [rating, title])
+end
+
+def update_watchlist(db, ep_title, status="COMPLETED")
+  db.execute("UPDATE watchlist SET status=? WHERE ep_title=?", [status, ep_title])
+end
 
 puts "Welcome to Flixer! Your one-stop shop to flix-management solutions."
-puts "What would you like to do? insert/exit "
+puts "What would you like to do? insert/update/exit "
 input_1 = gets.chomp
 if input_1 == "insert"
   puts "Insert where? tv_series/watchlist "
@@ -64,7 +71,23 @@ if input_1 == "insert"
     id = gets.chomp.to_i
     insert_watchlist(db, title, "NEW", id)
   else
-    puts "Cancelling insert."
+    puts "Cancelling Insert."
+  end
+elsif input_1 == "update"
+  puts "Update where? tv_series/watchlist "
+  input_2 = gets.chomp
+  if input_2 == "tv_series"
+    puts "What is the series title?"
+    title = gets.chomp
+    puts "What is the rating?"
+    rating = gets.chomp.to_i
+    update_series(db, title, rating)
+  elsif input_2 == "watchlist"
+    puts "What is the episode title?"
+    title = gets.chomp
+    update_watchlist(db, title)
+  else
+    puts "Cancelling Update."
   end
 else
   puts "Nothing else to do here."
