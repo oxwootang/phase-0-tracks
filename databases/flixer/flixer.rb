@@ -1,6 +1,8 @@
 # Welcome to Flixer! Your one-stop fixer for Netflix-management solutions.
 # Design a ruby program that uses database to track TV shows on Netflix.
 
+#
+
 # require gems
 require 'sqlite3'
 
@@ -33,13 +35,13 @@ db.execute(create_tv_series_table_cmd)
 
 # insert new series into TV-series TABLE
 def insert_series(db, title, rating, status="NEW", watchlist=false)
-  db.execute("INSERT INTO tv_series (title, rating, status, watchlist) VALUES (?, ?, ?, ?)" [title, rating, status, watchlist])
+  db.execute("INSERT INTO tv_series (title, rating, status, watchlist) VALUES (?, ?, ?, ?)", [title, rating, status, watchlist])
 end
 
 # insert new series to watchlist TABLE
 def insert_watchlist(db, ep_title, status="NEW", series_id)
-  db.execute("INSERT INTO watchlist (ep_title, status, series_id) VALUES (?, ?, ?)" [ep_title, status, series_id])
-  db.execute("UPDATE tv_series SET watchlist=true WHERE id=?" [series_id])
+  db.execute("INSERT INTO watchlist (ep_title, status, series_id) VALUES (?, ?, ?)", [ep_title, status, series_id])
+  db.execute("UPDATE tv_series SET watchlist=true WHERE id=?", [series_id])
 end
 
 
