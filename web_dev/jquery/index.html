@@ -1,16 +1,28 @@
+<!-- This is a sample webpage made for exploring jquery -->
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <title>jQuery Demo</title>
+    <!-- incorporating jquery library -->
+    <script src="jquery-3.1.1.js"></script>
+    <script src="jquery-demo.js"></script>
+    <!-- writing a script in the page to hide the random statement with id #random when hovering over it -->
+    <script>
+      $(document).ready(function(){
+        $("#random").hover(function(){
+          $(this).hide();
+        });
+      });
+    </script>
+
 </head>
 <body>
     <a href="http://jquery.com/">jQuery</a>
-    <script src="jquery-3.1.1.js"></script>
-    <script>
-
-    // Your code goes here.
-
-    </script>
+    <p> This page is a demo page for exploring jQuery.</p>
+    <p id="random"> Random statement 1.</p>
+    <img src="http://img04.deviantart.net/f91c/i/2011/035/b/2/cool_hippo_by_bellchen87-d2dhej8.jpg" alt="Cool Hippo">
+    <p> Check out the cool hippo.</p>
+    <button type="button">Toggle Button</button>
 </body>
 </html>
