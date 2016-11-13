@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wise Students</title>
+</head>
+<body>
+  <h1>List of Wise Students</h1>
+  <p>This page lists the Wise Men and Women students that are 100 years of age or older.</p>
+  <ul> <% @students.each do |student| if student['age'] >= 100 %>
+    <li> This wise student is <%= student['name']%>, and is <%= student['age']%> years old!</li>
+    <% end %>
+    <% end %>
+  </ul>
+
+<p>Click <a href="/">here</a> to return to the home page.</p>
+</body>
+</html>

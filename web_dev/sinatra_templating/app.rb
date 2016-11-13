@@ -25,3 +25,10 @@ post '/students' do
 end
 
 # add static resources
+
+# create an HTTP route that will respond with the new ERB template
+
+get '/students/wise' do
+  @students = db.execute("SELECT * FROM students")
+  erb :wise
+end
